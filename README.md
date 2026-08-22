@@ -22,10 +22,23 @@ An offline rock-collecting app for kids. Add rocks with photos, browse a rock gu
 
 > The app must be opened over `http://` or `https://` (not by double-clicking `index.html`) for the offline install feature (service worker) to work.
 
+## Putting it on a phone without leaving your computer on
+
+This repo now includes a GitHub Pages deploy workflow, so you can host it free from GitHub instead of from your own computer.
+
+### Publish it
+1. Push this repo to GitHub.
+2. In the repo, open **Settings → Pages**.
+3. Under **Build and deployment**, choose **GitHub Actions**.
+4. Push to `main` (or re-run the **Deploy to GitHub Pages** workflow in the **Actions** tab).
+5. GitHub will publish the app at:
+   - `https://gchamblin.github.io/rockApp/`
+
+Once that URL works, your computer does **not** need to stay on.
+
 ## Installing on a kid's device (phone/tablet)
-1. Make the app reachable from the device — either:
-   - Run `npm start` on a computer on the same Wi-Fi and open `http://<your-computer-ip>:8080` on the device, or
-   - Host the folder on any static web host (e.g. GitHub Pages, Netlify) and open that URL.
+1. Open `https://gchamblin.github.io/rockApp/` on the device.
+   - For testing only, you can still run `npm start` on the same Wi-Fi and open `http://<your-computer-ip>:8080`.
 2. On the device, open the link in the browser:
    - **iPhone/iPad (Safari):** tap the Share icon → **Add to Home Screen**.
    - **Android (Chrome):** tap the menu (⋮) → **Install app** / **Add to Home Screen**.
