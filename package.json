@@ -1,0 +1,13 @@
+{
+  "name": "rockys-rock-collection",
+  "version": "1.0.0",
+  "description": "Offline rock collecting app for kids with a rock guide and Florida rock facts.",
+  "private": true,
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1",
+    "dev": "http-server . -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

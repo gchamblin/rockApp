@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Logans Rock Collection</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#5b8a72" />
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🪨 Logan's Rock Collection</h1>
+    <p class="subtitle">Collect, learn, and explore rocks!</p>
+  </header>
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="collection">📦 My Collection</button>
+    <button class="tab-btn" data-tab="add">➕ Add a Rock</button>
+    <button class="tab-btn" data-tab="guide">📖 Rock Guide</button>
+    <button class="tab-btn" data-tab="florida">🌴 Florida Facts</button>
+  </nav>
+
+  <main>
+    <!-- MY COLLECTION -->
+    <section id="collection" class="tab-panel active">
+      <h2>My Rocks</h2>
+      <div class="backup-bar">
+        <button id="export-btn" class="secondary-btn">⬇️ Export Collection</button>
+        <button id="import-btn" class="secondary-btn">⬆️ Import Collection</button>
+        <input type="file" id="import-file" accept="application/json" class="hidden" aria-label="Import collection file" />
+      </div>
+      <p id="empty-msg" class="empty-msg">You haven't added any rocks yet. Tap "Add a Rock" to start!</p>
+      <div id="collection-grid" class="card-grid"></div>
+    </section>
+
+    <!-- ADD A ROCK -->
+    <section id="add" class="tab-panel">
+      <h2>Add a New Rock</h2>
+      <form id="add-rock-form">
+        <label for="rock-photo">📷 Photo</label>
+        <input type="file" id="rock-photo" accept="image/*" capture="environment" />
+        <img id="photo-preview" class="photo-preview hidden" alt="preview" />
+
+        <label for="rock-name">🪨 Rock Name</label>
+        <input type="text" id="rock-name" placeholder="e.g. My Shiny Rock" required />
+
+        <label for="rock-type">🏷️ Type (optional)</label>
+        <select id="rock-type">
+          <option value="">Not sure yet</option>
+          <option value="Igneous">Igneous</option>
+          <option value="Sedimentary">Sedimentary</option>
+          <option value="Metamorphic">Metamorphic</option>
+          <option value="Mineral">Mineral</option>
+          <option value="Fossil">Fossil</option>
+        </select>
+
+        <label for="rock-location">📍 Where I Found It</label>
+        <input type="text" id="rock-location" placeholder="e.g. Backyard, Beach, Grandma's house" />
+
+        <label for="rock-notes">📝 Notes</label>
+        <textarea id="rock-notes" rows="3" placeholder="Anything cool about this rock?"></textarea>
+
+        <button type="submit" class="primary-btn">Add to My Collection</button>
+      </form>
+    </section>
+
+    <!-- ROCK GUIDE -->
+    <section id="guide" class="tab-panel">
+      <h2>Rock Guide</h2>
+      <p class="section-intro">Learn about different kinds of rocks and minerals!</p>
+      <div id="guide-grid" class="card-grid"></div>
+    </section>
+
+    <!-- FLORIDA FACTS -->
+    <section id="florida" class="tab-panel">
+      <h2>🌴 Florida Rock Facts</h2>
+      <p class="section-intro">Fun facts about the rocks and fossils found in Florida!</p>
+      <div id="florida-grid" class="card-grid"></div>
+    </section>
+  </main>
+
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">✖</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
