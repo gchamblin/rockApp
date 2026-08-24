@@ -1,4 +1,4 @@
-# 🪨 Rocky's Rock Collection
+# 🪨 Logan's Rock Collection
 
 An offline rock-collecting app for kids. Add rocks with photos, browse a rock guide, and read fun facts about Florida rocks — no internet needed once it's installed.
 
