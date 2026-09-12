@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Logans Rock Collection</title>
+<title>Logan's Rock Collection</title>
 <link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#5b8a72" />
+<meta name="theme-color" content="#2d6a4f" />
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -31,6 +31,25 @@
         <button id="import-btn" class="secondary-btn">⬆️ Import Collection</button>
         <input type="file" id="import-file" accept="application/json" class="hidden" aria-label="Import collection file" />
       </div>
+
+      <div class="filter-controls" id="collection-filter-controls">
+        <div class="search-input-wrapper">
+          <input type="text" id="collection-search" placeholder="🔍 Search rocks by name, location, notes..." aria-label="Search my collection" />
+          <button id="clear-collection-search" class="clear-search-btn hidden" title="Clear search">✖</button>
+        </div>
+        <div class="filter-pills" id="collection-type-filters">
+          <span class="filter-label">Type:</span>
+          <button class="filter-pill active" data-type="all">All</button>
+          <button class="filter-pill" data-type="Igneous">Igneous</button>
+          <button class="filter-pill" data-type="Sedimentary">Sedimentary</button>
+          <button class="filter-pill" data-type="Metamorphic">Metamorphic</button>
+          <button class="filter-pill" data-type="Mineral">Mineral</button>
+          <button class="filter-pill" data-type="Fossil">Fossil</button>
+          <button class="filter-pill" data-type="Other">Other / Unsure</button>
+        </div>
+      </div>
+
+      <div id="collection-count" class="results-count"></div>
       <p id="empty-msg" class="empty-msg">You haven't added any rocks yet. Tap "Add a Rock" to start!</p>
       <div id="collection-grid" class="card-grid"></div>
     </section>
@@ -70,6 +89,24 @@
     <section id="guide" class="tab-panel">
       <h2>Rock Guide</h2>
       <p class="section-intro">Learn about different kinds of rocks and minerals!</p>
+      
+      <div class="filter-controls" id="guide-filter-controls">
+        <div class="search-input-wrapper">
+          <input type="text" id="guide-search" placeholder="🔍 Search rock guide..." aria-label="Search rock guide" />
+          <button id="clear-guide-search" class="clear-search-btn hidden" title="Clear search">✖</button>
+        </div>
+        <div class="filter-pills" id="guide-type-filters">
+          <span class="filter-label">Type:</span>
+          <button class="filter-pill active" data-guide-type="all">All</button>
+          <button class="filter-pill" data-guide-type="Igneous">Igneous</button>
+          <button class="filter-pill" data-guide-type="Sedimentary">Sedimentary</button>
+          <button class="filter-pill" data-guide-type="Metamorphic">Metamorphic</button>
+          <button class="filter-pill" data-guide-type="Mineral">Mineral</button>
+        </div>
+      </div>
+
+      <div id="guide-count" class="results-count"></div>
+      <p id="guide-empty-msg" class="empty-msg hidden">No guide entries match your search.</p>
       <div id="guide-grid" class="card-grid"></div>
     </section>
 
@@ -77,6 +114,16 @@
     <section id="florida" class="tab-panel">
       <h2>🌴 Florida Rock Facts</h2>
       <p class="section-intro">Fun facts about the rocks and fossils found in Florida!</p>
+
+      <div class="filter-controls" id="florida-filter-controls">
+        <div class="search-input-wrapper">
+          <input type="text" id="florida-search" placeholder="🔍 Search Florida facts..." aria-label="Search Florida facts" />
+          <button id="clear-florida-search" class="clear-search-btn hidden" title="Clear search">✖</button>
+        </div>
+      </div>
+
+      <div id="florida-count" class="results-count"></div>
+      <p id="florida-empty-msg" class="empty-msg hidden">No Florida facts match your search.</p>
       <div id="florida-grid" class="card-grid"></div>
     </section>
   </main>
