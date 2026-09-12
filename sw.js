@@ -1,5 +1,5 @@
-// Cache the app shell so the installed app still opens when the hosting computer is offline.
-const CACHE_NAME = "rockys-rocks-v2";
+// Simple cache-first service worker so the app runs fully offline once installed.
+const CACHE_NAME = "rockys-rocks-v1";
 const ASSETS = [
   "./",
   "index.html",
@@ -27,28 +27,7 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") {
-    return;
-  }
-
-  if (event.request.mode === "navigate") {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match("index.html"))
-    );
-    return;
-  }
-
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) {
-        return cached;
-      }
-
-      return fetch(event.request).then((response) => {
-        const responseClone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
-        return response;
-      });
-    })
+    caches.match(event.request).then((cached) => cached || fetch(event.request))
   );
 });
