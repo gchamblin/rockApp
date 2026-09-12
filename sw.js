@@ -1,5 +1,5 @@
 // Simple cache-first service worker so the app runs fully offline once installed.
-const CACHE_NAME = "rockys-rocks-v2";
+const CACHE_NAME = "logans-rocks-v1";
 const ASSETS = [
   "./",
   "index.html",

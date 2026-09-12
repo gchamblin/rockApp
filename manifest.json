@@ -1,13 +1,13 @@
 {
-  "name": "Rocky's Rock Collection",
-  "short_name": "Rocky's Rocks",
+  "name": "Logan's Rock Collection",
+  "short_name": "Logans Rocks",
   "description": "An offline rock collecting app with a rock guide and Florida rock facts.",
   "start_url": "index.html",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f4e3c1",
-  "theme_color": "#5b8a72",
+  "background_color": "#f5f8f7",
+  "theme_color": "#2d6a4f",
   "icons": [
     {
       "src": "icons/icon.svg",
