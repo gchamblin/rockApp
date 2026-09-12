@@ -59,7 +59,13 @@
       <h2>Add a New Rock</h2>
       <form id="add-rock-form">
         <label for="rock-photo">📷 Photo</label>
-        <input type="file" id="rock-photo" accept="image/*" capture="environment" />
+        <div class="photo-upload">
+          <label for="rock-photo" class="camera-button" aria-label="Add a photo">
+            <span class="camera-icon" aria-hidden="true">📷</span>
+            <span id="camera-label">Take Photo</span>
+          </label>
+          <input type="file" id="rock-photo" accept="image/*" capture="environment" />
+        </div>
         <img id="photo-preview" class="photo-preview hidden" alt="preview" />
 
         <label for="rock-name">🪨 Rock Name</label>

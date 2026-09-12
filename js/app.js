@@ -173,6 +173,7 @@ function initAddForm() {
   const form = document.getElementById("add-rock-form");
   const photoInput = document.getElementById("rock-photo");
   const preview = document.getElementById("photo-preview");
+  const cameraLabel = document.getElementById("camera-label");
   let photoData = "";
 
   photoInput.addEventListener("change", () => {
@@ -183,6 +184,7 @@ function initAddForm() {
       photoData = reader.result;
       preview.src = photoData;
       preview.classList.remove("hidden");
+      cameraLabel.textContent = file.name.length > 24 ? `${file.name.slice(0, 21)}...` : file.name;
     };
     reader.readAsDataURL(file);
   });
@@ -209,6 +211,7 @@ function initAddForm() {
     form.reset();
     preview.classList.add("hidden");
     photoData = "";
+    cameraLabel.textContent = "Take Photo";
 
     renderCollection();
     document.querySelector('.tab-btn[data-tab="collection"]').click();

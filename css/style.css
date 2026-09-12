@@ -374,6 +374,46 @@ form label {
   color: var(--text-dark);
 }
 
+.photo-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#rock-photo {
+  display: none;
+}
+
+.camera-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary) 0%, #4c9a73 100%);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(45, 106, 79, 0.25);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+.camera-button:hover,
+.camera-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(45, 106, 79, 0.32);
+  filter: brightness(1.02);
+}
+
+.camera-icon {
+  font-size: 1.2rem;
+}
+
 form input, form select, form textarea {
   padding: 10px 14px;
   border-radius: var(--radius-sm);

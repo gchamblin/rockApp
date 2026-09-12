@@ -54,7 +54,7 @@ const ROCK_GUIDE = [
   {
     name: "Slate",
     type: "Metamorphic",
-    emoji: "🪶",
+    emoji: "images/images.jpg",
     description: "Slate starts as shale and gets pressed and heated until it becomes a smooth rock that splits into flat sheets.",
     funFact: "Old chalkboards used to be made from real slate rock!"
   },
@@ -123,5 +123,13 @@ const FLORIDA_FACTS = [
     emoji: "🏖️",
     description: "Florida's famous white sand beaches are made mostly of quartz crystals, washed down from rocks in the Appalachian Mountains over millions of years.",
     funFact: "Some Florida sand squeaks when you walk on it because the quartz grains are so round and clean!"
+  },
+  {
+    name: "SandDollar",
+    tag: "Beach Treasure",
+    emoji: "💰",
+    image: "images/th.webp",
+    description: "Sand dollars are flat, burrowing sea urchins that leave behind their distinctive skeletons on Florida's beaches.",
+    funFact: "The intricate patterns on sand dollars are actually the remains of their internal structure, and they are often found washed up on the shore!"
   }
 ];
