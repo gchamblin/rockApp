@@ -22,6 +22,36 @@ An offline rock-collecting app for kids. Add rocks with photos, browse a rock gu
 
 > The app must be opened over `http://` or `https://` (not by double-clicking `index.html`) for the offline install feature (service worker) to work.
 
+## Deploying to GitHub Pages
+
+This repository is already configured for GitHub Pages with:
+
+- Static files served from the repository root (`index.html`, `css/`, `js/`, `manifest.json`, `sw.js`)
+- A Pages workflow at `.github/workflows/static.yml` that deploys on pushes to `main`
+
+### One-time GitHub setup (recommended: workflow deploy)
+
+1. Push this repository to GitHub.
+2. In GitHub, open **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Push to `main` (or run the workflow manually) and wait for the Pages deployment to complete.
+5. Open the published site URL shown in the Pages settings.
+
+### Alternative: deploy directly from `main` branch root
+
+If you prefer branch-based Pages instead of Actions:
+
+1. Open **Settings → Pages**.
+2. Set **Source** to **Deploy from a branch**.
+3. Select **Branch: `main`** and **Folder: `/ (root)`**.
+4. Save and wait for publication.
+
+## GitHub Pages + PWA notes
+
+- The app uses only relative asset paths, so it works at a project URL such as `https://<owner>.github.io/rockApp/`.
+- Service worker registration (`sw.js`) and cached assets are also relative, so offline support continues to work after first load.
+- If you previously installed an older version of the app, refresh once after deployment so the updated service worker cache is applied.
+
 ## Installing on a kid's device (phone/tablet)
 1. Make the app reachable from the device — either:
    - Run `npm start` on a computer on the same Wi-Fi and open `http://<your-computer-ip>:8080` on the device, or
